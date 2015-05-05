@@ -1,4 +1,6 @@
 
+exports.author = function(req, res){
+res.render('author.ejs')};
 
 exports.question = function(req, res){
 	res.render('quizes/question', { pregunta: 'Capital de Italia'});};
