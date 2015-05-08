@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Creditos</title>
+   
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <h1>Creado por</h1>
+    <p>Jacinto Sergio Castillo Solana</p>
+	<p>Pedro Ignacio Mora de Mingo</p>
+	<p><a href="/quizes/question"> Comienza a jugar </a></p>
+	<a href="/"> Volver al inicio </a>
+  </body>
+</html>
