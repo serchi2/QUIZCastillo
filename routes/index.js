@@ -11,6 +11,8 @@ router.param('quizId', quizController.load); //autoload quiz:id
 
 router.get('/quizes',                      quizController.index);
 router.get('/quizes/:quizId(\\d+)',        quizController.show);
+router.get('/quizes/new',		   quizController.new);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
+router.post('/quizes/create', 	  	   quizController.create);
 
 module.exports = router;
