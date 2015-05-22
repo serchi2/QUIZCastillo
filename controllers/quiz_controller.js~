@@ -9,13 +9,14 @@ res.render('quizes/new', {quiz: quiz, errors: []});
 };
 
 exports.create = function(req, res){
+	req.body.quiz.UserId = req.session.user.id;
 	var quiz = models.Quiz.build(req.body.quiz);
 	quiz.validate().then(function(err){
 	if (err) {
 	res.render('quizes/new',{ quiz: quiz, errors: err.errors});
    }else{	
 	//guarda en DB los campos pregunta y respuesta de quiz
-	quiz.save({fields: ["pregunta", "respuesta"]}).then(function(){
+	quiz.save({fields: ["pregunta", "respuesta","UserId"]}).then(function(){
 	res.redirect('/quizes')})
 }
 }
