@@ -43,6 +43,11 @@ exports.load = function(req, res, next, quizId) {
 
 // GET /quizes
 exports.index = function(req, res) {
+
+var options = {};
+  if(req.user){
+    options.where = {UserId: req.user.id}
+ }
   models.Quiz.findAll().then(
     function(quizes) {
       res.render('quizes/index', { quizes: quizes, errors:[]});
@@ -80,7 +85,7 @@ req.quiz.respuesta = req.body.quiz.respuesta;
 
 req.quiz.validate().then(function(err){
 if(err){ res.render("quizes/edit",{ quiz: req.quiz, errors: err.errors});
-} else{ req.quiz.save({fields:["pregunta","respuesta"]}).then(function(){res.redirect('/quizes');});
+} else{ req.quiz.save({fields:["pregunta","respuesta","image"]}).then(function(){res.redirect('/quizes');});
 }
 }
 );
